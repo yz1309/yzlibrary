@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircularSeekBar">
+        <attr name="progress"                               format="integer"></attr>
+        <attr name="max"                                    format="integer"></attr>
+        <attr name="move_outside_circle"                    format="boolean"></attr>
+        <attr name="maintain_equal_circle"                  format="boolean"></attr>
+        <attr name="use_custom_radii"                       format="boolean"></attr>
+        <attr name="lock_enabled"                           format="boolean"></attr>
+        <attr name="circle_x_radius"                        format="float"></attr>
+        <attr name="circle_y_radius"                        format="float"></attr>
+        <attr name="circle_stroke_width"                    format="float"></attr>
+        <attr name="pointer_radius"                         format="float"></attr>
+        <attr name="pointer_halo_width"                     format="float"></attr>
+        <attr name="pointer_halo_border_width"              format="float"></attr>
+        <attr name="circle_color"                           format="string"></attr>
+        <attr name="circle_progress_color"                  format="string"></attr>
+        <attr name="pointer_color"                          format="string"></attr>
+        <attr name="pointer_halo_color"                     format="string"></attr>
+        <attr name="pointer_halo_color_ontouch"             format="string"></attr>
+        <attr name="pointer_alpha_ontouch"                  format="integer"></attr>
+        <attr name="start_angle"                            format="float"></attr>
+        <attr name="end_angle"                              format="float"></attr>
+        <attr name="circle_fill"                            format="string"></attr>
+    </declare-styleable>
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor"                     format="color" />
+        <attr name="pstsUnderlineColor"                     format="color" />
+        <attr name="pstsDividerColor"                       format="color" />
+        <attr name="pstsIndicatorHeight"                    format="dimension" />
+        <attr name="pstsUnderlineHeight"                    format="dimension" />
+        <attr name="pstsDividerPadding"                     format="dimension" />
+        <attr name="pstsTabPaddingLeftRight"                format="dimension" />
+        <attr name="pstsScrollOffset"                       format="dimension" />
+        <attr name="pstsTabBackground"                      format="reference" />
+        <attr name="pstsShouldExpand"                       format="boolean" />
+        <attr name="pstsTextAllCaps"                        format="boolean" />
+        <attr name="selectedTabTextColor"                   format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ShineButton">
+        <attr name="btn_color"                              format="color" />
+        <attr name="btn_fill_color"                         format="color" />
+        <attr name="shine_count"                            format="integer" />
+        <attr name="shine_turn_angle"                       format="float" />
+        <attr name="small_shine_offset_angle"               format="float" />
+        <attr name="enable_flashing"                        format="boolean" />
+        <attr name="allow_random_color"                     format="boolean" />
+        <attr name="small_shine_color"                      format="color" />
+        <attr name="big_shine_color"                        format="color" />
+        <attr name="shine_animation_duration"               format="integer" />
+        <attr name="click_animation_duration"               format="integer" />
+        <attr name="shine_distance_multiple"                format="float" />
+        <attr name="shine_size"                             format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="AutoComplete">
+        <attr name="closeAutoComplete"                      format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="Dialog">
+        <attr name="DialogTitleAppearance"                  format="reference" />
+        <attr name="DialogTitleText"                        format="reference|string" />
+        <attr name="DialogSpotColor"                        format="reference|color"/>
+        <attr name="DialogSpotCount"                        format="integer"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="PorterImageView">
+        <attr name="siShape"                                format="integer|reference" />
+    </declare-styleable>
+</resources>
