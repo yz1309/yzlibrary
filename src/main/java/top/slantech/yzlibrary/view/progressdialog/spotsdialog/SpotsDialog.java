@@ -8,17 +8,14 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
-
 import top.slantech.yzlibrary.R;
 
 /**
  * 带从左至右圆点动态和文本
- * 功能说明：
  * 1、new SpotsDialog(this).show();
  * 2、new SpotsDialog(this, R.style.Custom).show();
- * 3、new SpotsDialog(this, "Custom message").show();
- * 4、new SpotsDialog(this, "Custom message & style", R.style.Custom).show();
- * on 13.01.15 at 14:22
+ * 3、new SpotsDialog(this, "msg").show();
+ * 4、new SpotsDialog(this, "msg", R.style.Custom).show();
  */
 public class SpotsDialog extends AlertDialog {
 

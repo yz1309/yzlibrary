@@ -19,15 +19,6 @@ import android.view.animation.LinearInterpolator;
 
 import top.slantech.yzlibrary.R;
 
-
-/**
- * @author Chad
- * @title com.sackcentury.shinebuttonlib
- * @description
- * @modifier
- * @date
- * @since 16/7/5 下午2:27
- **/
 public class ShineButton extends PorterShapeImageView {
     private static final String TAG = "ShineButton";
     private boolean isChecked = false;

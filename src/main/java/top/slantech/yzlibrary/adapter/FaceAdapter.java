@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-
 import java.util.List;
-
 import top.slantech.yzlibrary.R;
 import top.slantech.yzlibrary.bean.ChatEmoji;
 

@@ -54,7 +54,7 @@ import top.slantech.yzlibrary.R;
 
 /**
  * 文件操作类
- * 功能描述：
+ * 功能
  * 1、通过文件的网络地址从SD卡中读取图片，如果SD中没有则自动下载并保存 getBitmapFromSD("/sd/ese","http://xx.png",ImageUtils.CUTIMG,100,100);
  * 2、通过文件的本地地址从SD卡读取图片 getBitmapFromSD("/sd/ese/xx.png",100,100);
  * 3、通过文件的本地地址从SD卡读取图片 getBitmapFromSD(file),getBitmapFromSD("/sd/ese/xx.png");
@@ -124,7 +124,7 @@ public class FileUtils {
     private static int freeSdSpaceNeededToCache = 200 * 1024 * 1024;
 
     /**
-     * 描述：通过文件的网络地址从SD卡中读取图片，如果SD中没有则自动下载并保存.
+     * 通过文件的网络地址从SD卡中读取图片，如果SD中没有则自动下载并保存.
      *
      * @param url           文件的网络地址
      * @param type          图片的处理类型（剪切或者缩放到指定大小，参考AbImageUtil类）
@@ -162,7 +162,7 @@ public class FileUtils {
 
 
     /**
-     * 描述：通过文件的本地地址从SD卡读取图片.
+     * 通过文件的本地地址从SD卡读取图片.
      *
      * @param file          the file
      * @param type          图片的处理类型（剪切或者缩放到指定大小，参考AbConstant类）
@@ -199,7 +199,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：通过文件的本地地址从SD卡读取图片.
+     * 通过文件的本地地址从SD卡读取图片.
      *
      * @param file the file
      * @return Bitmap 图片
@@ -225,10 +225,10 @@ public class FileUtils {
     }
 
     /**
-     * 描述：通过文件的本地地址从SD卡读取图片.
+     * 通过文件的本地地址从SD卡读取图片.
      *
-     * @param imagePath
-     * @return
+     * @param imagePath imagePath
+     * @return Bitmap
      */
     public static Bitmap getBitmapFromSD(String imagePath) {
         Bitmap bitmap = null;
@@ -247,7 +247,7 @@ public class FileUtils {
 
 
     /**
-     * 描述：将图片的byte[]写入本地文件.
+     * 将图片的byte[]写入本地文件.
      *
      * @param imgByte       图片的byte[]形势
      * @param fileName      文件名称，需要包含后缀，如.jpg
@@ -313,7 +313,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：根据URL从互连网获取图片.
+     * 根据URL从互连网获取图片.
      *
      * @param url           要下载文件的网络地址
      * @param type          图片的处理类型（剪切或者缩放到指定大小，参考AbConstant类）
@@ -332,7 +332,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：获取src中的图片资源.
+     * 获取src中的图片资源.
      *
      * @param src 图片的src路径，如（“image/arrow.png”）
      * @return Bitmap 图片
@@ -348,7 +348,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：获取Asset中的图片资源.
+     * 获取Asset中的图片资源.
      *
      * @param context  the context
      * @param fileName the file name
@@ -367,7 +367,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：获取Asset中的图片资源.
+     * 获取Asset中的图片资源.
      *
      * @param context  the context
      * @param fileName the file name
@@ -390,7 +390,7 @@ public class FileUtils {
      *
      * @param url              要下载文件的网络地址
      * @param imageDownloadDir the dir path
-     * @return 下载好的本地文件地址
+     * @return String 下载好的本地文件地址
      */
     public static String downloadFile(String url, String imageDownloadDir) {
         InputStream in = null;
@@ -473,7 +473,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：获取网络文件的大小.
+     * 获取网络文件的大小.
      *
      * @param Url 图片的网络路径
      * @return int 网络文件的大小
@@ -504,10 +504,10 @@ public class FileUtils {
     }
 
     /**
-     * 描述：通过网络获取文件名.
+     * 通过网络获取文件名.
      *
      * @param url 文件地址
-     * @return 文件名
+     * @return String 文件名
      */
     public static String getRealFileNameFromUrl(String url) {
         String name = null;
@@ -549,10 +549,10 @@ public class FileUtils {
 
 
     /**
-     * 描述：通过网络获取真实文件名(xx.后缀).
+     * 通过网络获取真实文件名(xx.后缀).
      *
      * @param connection 连接
-     * @return 文件名
+     * @return String 文件名
      */
     public static String getRealFileName(HttpURLConnection connection) {
         String name = null;
@@ -584,10 +584,10 @@ public class FileUtils {
     }
 
     /**
-     * 描述：通过网络获取真实文件名(xx.后缀).
+     * 通过网络获取真实文件名(xx.后缀).
      *
      * @param response the response
-     * @return 文件名
+     * @return String 文件名
      */
     public static String getRealFileName(HttpResponse response) {
         String name = null;
@@ -612,10 +612,10 @@ public class FileUtils {
     }
 
     /**
-     * 描述：获取文件名（不含后缀）.
+     * 获取文件名（不含后缀）.
      *
      * @param url 文件地址
-     * @return 文件名
+     * @return String 文件名
      */
     public static String getCacheFileNameFromUrl(String url) {
         if (TextUtils.isEmpty(url)) {
@@ -626,11 +626,11 @@ public class FileUtils {
 
 
     /**
-     * 描述：外链模式和通过网络获取文件名（.后缀）.
+     * 外链模式和通过网络获取文件名（.后缀）.
      *
      * @param url      文件地址
      * @param response the response
-     * @return 文件名
+     * @return String 文件名
      */
     public static String getCacheFileNameFromUrl(String url, HttpResponse response) {
         if (TextUtils.isEmpty(url)) {
@@ -652,11 +652,11 @@ public class FileUtils {
 
 
     /**
-     * 描述：外链模式和通过网络获取文件名（.后缀）.
+     * 外链模式和通过网络获取文件名（.后缀）.
      *
      * @param url        文件地址
      * @param connection the connection
-     * @return 文件名
+     * @return String 文件名
      */
     public static String getCacheFileNameFromUrl(String url, HttpURLConnection connection) {
         if (TextUtils.isEmpty(url)) {
@@ -682,7 +682,7 @@ public class FileUtils {
      *
      * @param url        文件地址
      * @param connection the connection
-     * @return 文件后缀
+     * @return String 文件后缀
      */
     public static String getMIMEFromUrl(String url, HttpURLConnection connection) {
 
@@ -716,7 +716,7 @@ public class FileUtils {
      *
      * @param url      文件地址
      * @param response the response
-     * @return 文件后缀
+     * @return String 文件后缀
      */
     public static String getMIMEFromUrl(String url, HttpResponse response) {
 
@@ -746,7 +746,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：从sd卡中的文件读取到byte[].
+     * 从sd卡中的文件读取到byte[].
      *
      * @param path sd卡中文件路径
      * @return byte[]
@@ -794,7 +794,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：将byte数组写入文件.
+     * 将byte数组写入文件.
      *
      * @param path    the path
      * @param content the content
@@ -837,7 +837,7 @@ public class FileUtils {
     }
 
     /**
-     * 描述：SD卡是否能用.
+     * SD卡是否能用.
      *
      * @return true 可用,false不可用
      */
@@ -884,15 +884,15 @@ public class FileUtils {
     /**
      * 获取文件夹下的文件列表 直级
      *
-     * @param path
-     * @return
+     * @param path path
+     * @return List file
      */
     public static List<File> getFileByPath(String path) {
         List<File> list = new ArrayList<>();
         File file = new File(path);
         File[] files = file.listFiles();
         if (file != null) {
-            for (File model:files){
+            for (File model : files) {
                 list.add(model);
             }
         }
@@ -903,6 +903,7 @@ public class FileUtils {
     /**
      * 删除指定文件夹下的所有文件
      *
+     * @param path path
      * @return true, if successful
      */
     public static boolean clearFile(String path) {
@@ -928,12 +929,12 @@ public class FileUtils {
 
 
     /**
-     * 描述：读取Assets目录的文件内容.
+     * 读取Assets目录的文件内容.
      *
      * @param context  the context
      * @param name     the name
      * @param encoding the encoding
-     * @return the string
+     * @return String
      */
     public static String readAssetsByName(Context context, String name, String... encoding) {
         String text = null;
@@ -969,11 +970,11 @@ public class FileUtils {
     }
 
     /**
-     * 描述：读取Assets目录的文件内容.
+     * 读取Assets目录的文件内容.
      *
-     * @param context
-     * @param assetFile
-     * @return
+     * @param context   context
+     * @param assetFile assetFile
+     * @return String
      * @throws IOException
      */
     public static String readAssetsByName(Context context, String assetFile) throws IOException {
@@ -991,10 +992,10 @@ public class FileUtils {
     }
 
     /**
-     * 描述：读取Assets目录的文件内容
+     * 读取Assets目录的文件内容
      *
-     * @param inputStream
-     * @return
+     * @param inputStream inputStream
+     * @return String
      */
     static public String readAssetsByName(InputStream inputStream) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -1015,12 +1016,12 @@ public class FileUtils {
     }
 
     /**
-     * 描述：读取Raw目录的文件内容.
+     * 读取Raw目录的文件内容.
      *
      * @param context  the context
      * @param id       the id
      * @param encoding the encoding
-     * @return the string
+     * @return String
      */
     public static String readRawByName(Context context, int id, String encoding) {
         String text = null;
@@ -1056,7 +1057,7 @@ public class FileUtils {
     /**
      * Gets the free sd space needed to cache.
      *
-     * @return the free sd space needed to cache
+     * @return int the free sd space needed to cache
      */
     public static int getFreeSdSpaceNeededToCache() {
         return freeSdSpaceNeededToCache;
@@ -1133,8 +1134,8 @@ public class FileUtils {
     /**
      * Drawable 转 Bitmap
      *
-     * @param drawable
-     * @return
+     * @param drawable drawable
+     * @return Bitmap
      */
     public static Bitmap drawable2Bitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
@@ -1177,9 +1178,8 @@ public class FileUtils {
     /**
      * Gets the extension of a file name, like ".png" or ".jpg".
      *
-     * @param uri
-     * @return Extension including the dot("."); "" if there is no extension;
-     * null if uri was null.
+     * @param uri uri
+     * @return String Extension including the dot("."); "" if there is no extension;null if uri was null.
      */
     public static String getExtension(String uri) {
         if (uri == null) {
@@ -1198,8 +1198,8 @@ public class FileUtils {
     /**
      * 是否图片
      *
-     * @param fileName
-     * @return
+     * @param fileName fileName
+     * @return boolean
      */
     public static boolean isPic(String fileName) {
         String lowerCase = StringUtils.parseEmpty(fileName).toLowerCase();
@@ -1218,8 +1218,8 @@ public class FileUtils {
     /**
      * 获取文件后缀名(png)
      *
-     * @param fileName
-     * @return 文件后缀名
+     * @param fileName fileName
+     * @return String 文件后缀名
      */
     public static String getRealFileNameFromPath(String fileName) {
         if (!TextUtils.isEmpty(fileName)) {
@@ -1236,7 +1236,7 @@ public class FileUtils {
      * 通过Okio方法，通过路径得到文件内容
      *
      * @param path 带文件名
-     * @return
+     * @return String
      */
     public static String readContentFromPath(String path) {
         String content = "";
@@ -1261,7 +1261,7 @@ public class FileUtils {
      * 通过Okio方法，向指定文件写入文件内容
      *
      * @param path    带文件名
-     * @param content
+     * @param content content
      */
     public static void writeContentFromPath(String path, String content) {
         Sink sink = null;
@@ -1296,8 +1296,8 @@ public class FileUtils {
      * 3：读取到输入流后，需要读取生成字节流
      * 4：一行一行的输出 readline()
      *
-     * @param filePath
-     * @return
+     * @param filePath filePath
+     * @return String
      */
     public static String readTxtFile(String filePath) {
         StringBuffer sb = new StringBuffer();
@@ -1324,7 +1324,8 @@ public class FileUtils {
     /**
      * 根据文件后缀名获得对应的MIME类型。
      *
-     * @param file
+     * @param file file
+     * @return String
      */
     public static String getMIMEType(File file) {
 
@@ -1335,7 +1336,7 @@ public class FileUtils {
         if (dotIndex < 0) {
             return type;
         }
-		/* 获取文件的后缀名 */
+        /* 获取文件的后缀名 */
         String end = fName.substring(dotIndex, fName.length()).toLowerCase();
         if ("".equals(end)) {
             return type;
@@ -1351,8 +1352,9 @@ public class FileUtils {
 
     /**
      * 获取文件名称对应的图标
-     * @param fileName
-     * @return
+     *
+     * @param fileName fileName
+     * @return int
      */
     public static int getFileIcon(String fileName) {
         String ext = "";
@@ -1386,12 +1388,13 @@ public class FileUtils {
     }
 
     private static int BUFFER = 4096;
+
     /**
      * 解压压缩文件
      *
-     * @param savePath
-     * @param toPath
-     * @return
+     * @param savePath savePath
+     * @param toPath   toPath
+     * @return boolean
      */
     public static boolean unZipResourcePackage(String savePath, String toPath) {
         try {
@@ -1437,34 +1440,33 @@ public class FileUtils {
     }
 
 
-
     private final static String[][] MIME_MapTable = {
             // {后缀名，MIME类型}
-            { ".3gp", "video/3gpp" }, { ".apk", "application/vnd.android.package-archive" },
-            { ".asf", "video/x-ms-asf" }, { ".avi", "video/x-msvideo" }, { ".bin", "application/octet-stream" },
-            { ".bmp", "image/bmp" }, { ".c", "text/plain" }, { ".class", "application/octet-stream" },
-            { ".conf", "text/plain" }, { ".cpp", "text/plain" }, { ".doc", "application/msword" },
-            { ".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" },
-            { ".xls", "application/vnd.ms-excel" },
-            { ".xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" },
-            { ".exe", "application/octet-stream" }, { ".gif", "image/gif" }, { ".gtar", "application/x-gtar" },
-            { ".gz", "application/x-gzip" }, { ".h", "text/plain" }, { ".htm", "text/html" }, { ".html", "text/html" },
-            { ".jar", "application/java-archive" }, { ".java", "text/plain" }, { ".jpeg", "image/jpeg" },
-            { ".jpg", "image/jpeg" }, { ".js", "application/x-javascript" }, { ".log", "text/plain" },
-            { ".m3u", "audio/x-mpegurl" }, { ".m4a", "audio/mp4a-latm" }, { ".m4b", "audio/mp4a-latm" },
-            { ".m4p", "audio/mp4a-latm" }, { ".m4u", "video/vnd.mpegurl" }, { ".m4v", "video/x-m4v" },
-            { ".mov", "video/quicktime" }, { ".mp2", "audio/x-mpeg" }, { ".mp3", "audio/x-mpeg" },
-            { ".mp4", "video/mp4" }, { ".mpc", "application/vnd.mpohun.certificate" }, { ".mpe", "video/mpeg" },
-            { ".mpeg", "video/mpeg" }, { ".mpg", "video/mpeg" }, { ".mpg4", "video/mp4" }, { ".mpga", "audio/mpeg" },
-            { ".msg", "application/vnd.ms-outlook" }, { ".ogg", "audio/ogg" }, { ".pdf", "application/pdf" },
-            { ".png", "image/png" }, { ".pps", "application/vnd.ms-powerpoint" },
-            { ".ppt", "application/vnd.ms-powerpoint" },
-            { ".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation" },
-            { ".prop", "text/plain" }, { ".rc", "text/plain" }, { ".rmvb", "audio/x-pn-realaudio" },
-            { ".rtf", "application/rtf" }, { ".sh", "text/plain" }, { ".tar", "application/x-tar" },
-            { ".tgz", "application/x-compressed" }, { ".txt", "text/plain" }, { ".wav", "audio/x-wav" },
-            { ".wma", "audio/x-ms-wma" }, { ".wmv", "audio/x-ms-wmv" }, { ".wps", "application/vnd.ms-works" },
-            { ".xml", "text/plain" }, { ".z", "application/x-compress" }, { ".zip", "application/x-zip-compressed" },
-            { "", "*/*" } };
+            {".3gp", "video/3gpp"}, {".apk", "application/vnd.android.package-archive"},
+            {".asf", "video/x-ms-asf"}, {".avi", "video/x-msvideo"}, {".bin", "application/octet-stream"},
+            {".bmp", "image/bmp"}, {".c", "text/plain"}, {".class", "application/octet-stream"},
+            {".conf", "text/plain"}, {".cpp", "text/plain"}, {".doc", "application/msword"},
+            {".docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"},
+            {".xls", "application/vnd.ms-excel"},
+            {".xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+            {".exe", "application/octet-stream"}, {".gif", "image/gif"}, {".gtar", "application/x-gtar"},
+            {".gz", "application/x-gzip"}, {".h", "text/plain"}, {".htm", "text/html"}, {".html", "text/html"},
+            {".jar", "application/java-archive"}, {".java", "text/plain"}, {".jpeg", "image/jpeg"},
+            {".jpg", "image/jpeg"}, {".js", "application/x-javascript"}, {".log", "text/plain"},
+            {".m3u", "audio/x-mpegurl"}, {".m4a", "audio/mp4a-latm"}, {".m4b", "audio/mp4a-latm"},
+            {".m4p", "audio/mp4a-latm"}, {".m4u", "video/vnd.mpegurl"}, {".m4v", "video/x-m4v"},
+            {".mov", "video/quicktime"}, {".mp2", "audio/x-mpeg"}, {".mp3", "audio/x-mpeg"},
+            {".mp4", "video/mp4"}, {".mpc", "application/vnd.mpohun.certificate"}, {".mpe", "video/mpeg"},
+            {".mpeg", "video/mpeg"}, {".mpg", "video/mpeg"}, {".mpg4", "video/mp4"}, {".mpga", "audio/mpeg"},
+            {".msg", "application/vnd.ms-outlook"}, {".ogg", "audio/ogg"}, {".pdf", "application/pdf"},
+            {".png", "image/png"}, {".pps", "application/vnd.ms-powerpoint"},
+            {".ppt", "application/vnd.ms-powerpoint"},
+            {".pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation"},
+            {".prop", "text/plain"}, {".rc", "text/plain"}, {".rmvb", "audio/x-pn-realaudio"},
+            {".rtf", "application/rtf"}, {".sh", "text/plain"}, {".tar", "application/x-tar"},
+            {".tgz", "application/x-compressed"}, {".txt", "text/plain"}, {".wav", "audio/x-wav"},
+            {".wma", "audio/x-ms-wma"}, {".wmv", "audio/x-ms-wmv"}, {".wps", "application/vnd.ms-works"},
+            {".xml", "text/plain"}, {".z", "application/x-compress"}, {".zip", "application/x-zip-compressed"},
+            {"", "*/*"}};
 
 }

@@ -19,7 +19,6 @@ public class ViewPagerAdapter extends PagerAdapter {
         this.pageViews=pageViews;
     }
 
-    // 显示数目
     @Override
     public int getCount() {
         return pageViews.size();
@@ -40,9 +39,6 @@ public class ViewPagerAdapter extends PagerAdapter {
         ((ViewPager)arg0).removeView(pageViews.get(arg1));
     }
 
-    /***
-     * 获取每一个item�?类于listview中的getview
-     */
     @Override
     public Object instantiateItem(View arg0, int arg1) {
         ((ViewPager)arg0).addView(pageViews.get(arg1));

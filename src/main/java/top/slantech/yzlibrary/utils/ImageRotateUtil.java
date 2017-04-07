@@ -22,7 +22,7 @@ public class ImageRotateUtil {
      * 读取图片的旋转的角度
      *
      * @param path 图片绝对路径
-     * @return 图片的旋转角度
+     * @return int 图片的旋转角度
      */
     public static int getBitmapDegree(String path) {
         int degree = 0;
@@ -55,7 +55,7 @@ public class ImageRotateUtil {
      *
      * @param bm     需要旋转的图片
      * @param degree 旋转角度
-     * @return 旋转后的图片
+     * @return Bitmap 旋转后的图片
      */
     public static Bitmap rotateBitmapByDegree(Bitmap bm, int degree) {
         Bitmap returnBm = null;
@@ -88,7 +88,7 @@ public class ImageRotateUtil {
      *
      * @param path 需要旋转的图片
      * @param degree 指定的旋转角度
-     * @return 旋转后的图片
+     * @return String 旋转后的图片
      */
     public static String rotateBitmapByDegree(String path, int degree) {
         Bitmap bitmap = BitmapFactory.decodeFile(path);

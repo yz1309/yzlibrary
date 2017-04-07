@@ -1,8 +1,5 @@
 package top.slantech.yzlibrary.view.agreeanim;
 
-import android.support.annotation.NonNull;
-
-
 /**
  * Created by slantech on 2016/12/17 15:07
  */
@@ -10,9 +7,9 @@ public class EasingProvider  {
     /**
      * @param ease            Easing type
      * @param elapsedTimeRate Elapsed time / Total time
-     * @return easedValue
+     * @return float
      */
-    public static float get(@NonNull Ease ease, float elapsedTimeRate) {
+    public static float get(Ease ease, float elapsedTimeRate) {
         switch (ease) {
             case LINEAR:
                 return elapsedTimeRate;

@@ -27,7 +27,6 @@ import top.slantech.yzlibrary.utils.ULog;
 
 
 /**
- * author:slantech
  * 功能介绍：
  * 1、自定义Toast显示 cusToast(Activity,"提示内容",0);
  * 2、获取当前应用包信息 getPackageInfo(Activity);
@@ -36,23 +35,14 @@ import top.slantech.yzlibrary.utils.ULog;
  */
 public class BaseApplication extends Application {
 
-
-    private static BaseApplication appContext;
     @Override
     public void onCreate() {
         super.onCreate();
 
-        appContext = this;
         ULog.tag = "ULog";
         ULog.isOpen = true;
 
-
-
     }
-    public static BaseApplication getInstance() {
-        return appContext;
-    }
-
 
     /**
      * 自定义Toast显示
@@ -82,9 +72,9 @@ public class BaseApplication extends Application {
 
 
     /**
-     * 获取包信息.
+     * 获取包信息
      *
-     * @param context the context
+     * @param context context
      */
     public static PackageInfo getPackageInfo(Context context) {
         PackageInfo info = null;
@@ -99,15 +89,15 @@ public class BaseApplication extends Application {
 
 
     /**
-     * 用来判断服务是否运行.
+     * 用来判断服务是否运行
      *
-     * @param ctx       the ctx
+     * @param context   context
      * @param className 判断的服务名字 "com.xxx.xx..XXXService"
      * @return true 在运行 false 不在运行
      */
-    public static boolean isServiceRunning(Context ctx, String className) {
+    public static boolean isServiceRunning(Context context, String className) {
         boolean isRunning = false;
-        ActivityManager activityManager = (ActivityManager) ctx.getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningServiceInfo> servicesList = activityManager.getRunningServices(Integer.MAX_VALUE);
         Iterator<ActivityManager.RunningServiceInfo> l = servicesList.iterator();
         while (l.hasNext()) {
@@ -125,7 +115,7 @@ public class BaseApplication extends Application {
     /***
      * 是否连续按了两次
      *
-     * @return
+     * @return boolean
      */
     public boolean isDoubleTouch() {
         if (backCunt == 0) {
@@ -143,12 +133,12 @@ public class BaseApplication extends Application {
 
 
     /**
-     * 拨打电话
-     *  <uses-permission android:name="android.permission.CALL_PHONE"/>
-     * @param context
-     * @param phone
+     * 拨打电话android.permission.CALL_PHONE
+     *
+     * @param context context
+     * @param phone   phone
      * @param type    =1 表示直接拨号 =2 表示手动拨号
-     * @return
+     * @return String
      */
     public static String getCall(Context context, String phone, int type) {
         if (CheckUtils.isMobileNo(phone)) {
@@ -173,8 +163,9 @@ public class BaseApplication extends Application {
 
     /**
      * 检查应用程序是否存在
-     * @param context 上下文
-     * @param packageName 报名
+     *
+     * @param context     context
+     * @param packageName packageName
      * @return boolean
      */
     public static boolean checkBrowser(Context context, String packageName) {
@@ -189,7 +180,12 @@ public class BaseApplication extends Application {
         return installed;
     }
 
-
+    /**
+     * 获取VersionName
+     *
+     * @param context context
+     * @return String
+     */
     public static String getVersionName(Context context) {
         PackageInfo packInfo = getPackageInfo(context);
         if (packInfo != null && packInfo.versionName != null) {
@@ -198,6 +194,12 @@ public class BaseApplication extends Application {
         return "";
     }
 
+    /**
+     * 获取VersionCode
+     *
+     * @param context context
+     * @return int
+     */
     public static int getVersionCode(Context context) {
         PackageInfo packInfo = getPackageInfo(context);
         if (packInfo != null && packInfo.versionCode > 0) {
@@ -207,10 +209,10 @@ public class BaseApplication extends Application {
     }
 
     /**
-     * 启动包名 程序
+     * 通过包名启动程序
      *
-     * @param context
-     * @param packagename
+     * @param context     context
+     * @param packagename packagename
      */
     public static void doStartApplicationWithPackageName(Context context, String packagename) {
         // 通过包名获取此APP详细信息，包括Activities、services、versioncode、name等等

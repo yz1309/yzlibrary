@@ -9,13 +9,16 @@ package top.slantech.yzlibrary.utils;
  * Created by slantech on 2016/08/26 19:19
  */
 public class ArrayTool {
+    /**
+     * 私有构造方法,不让其他类创建本来对象,直接用类名.调用
+     */
     private ArrayTool() {
-    }                        //私有构造方法,不让其他类创建本来对象,直接用类名.调用
+    }
 
     /**
      * 获取最大值
      * @param arr
-     * @return
+     * @return int
      */
     public static int getMax(int[] arr) {
         int max = arr[0];                                     //记录第一个元素
@@ -31,7 +34,7 @@ public class ArrayTool {
     /**
      * 获取最大值及索引值
      * @param arr
-     * @return
+     * @return int[]
      */
     public static int[] getMax2(int[] arr) {
         int[] rtn = new int[2];
@@ -49,7 +52,7 @@ public class ArrayTool {
 
     /**
      * 数组的遍历
-     * @param arr
+     * @param arr int[]
      */
     public static void print(int[] arr) {
         for (int temp:arr){
@@ -59,7 +62,7 @@ public class ArrayTool {
 
     /**
      * 数组的反转
-     * @param arr
+     * @param arr int[]
      */
     public static void revArray(int[] arr) {
         int len = arr.length;

@@ -126,9 +126,6 @@ public class FaceRelativeLayout extends RelativeLayout implements
 
     /**
      * 表情选择监听
-     *
-     * @author naibo-liao
-     * @时间： 2013-1-15下午04:32:54
      */
     public interface OnCorpusSelectedListener {
 

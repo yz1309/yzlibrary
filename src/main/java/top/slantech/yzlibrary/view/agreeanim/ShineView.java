@@ -14,14 +14,6 @@ import android.view.View;
 
 import java.util.Random;
 
-/**
- * @author Chad
- * @title com.sackcentury.shinebuttonlib
- * @description
- * @modifier
- * @date
- * @since 16/7/5 下午3:57
- **/
 public class ShineView extends View {
     private static final String TAG = "ShineView";
 

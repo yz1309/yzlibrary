@@ -21,7 +21,7 @@ import top.slantech.yzlibrary.bean.ChatEmoji;
 
 
 /**
- * @文件描述 : 表情转换工具
+ * 表情转换工具
  */
 public class FaceConversionUtil {
 
@@ -180,9 +180,9 @@ public class FaceConversionUtil {
     /**
      * 得到一个SpanableString对象，通过传入的字符串,并进行正则判断
      *
-     * @param context
-     * @param str
-     * @return
+     * @param context context
+     * @param str     str
+     * @return SpannableString
      */
     public SpannableString getExpressionString(Context context, String str) {
         SpannableString spannableString = new SpannableString(str);
@@ -201,10 +201,10 @@ public class FaceConversionUtil {
     /**
      * 添加表情
      *
-     * @param context
-     * @param imgId
+     * @param context         context
+     * @param imgId           imgId
      * @param spannableString
-     * @return
+     * @return SpannableString
      */
     public SpannableString addFace(Context context, int imgId,
                                    String spannableString) {
@@ -224,10 +224,10 @@ public class FaceConversionUtil {
     /**
      * 对spanableString进行正则判断，如果符合要求，则以表情图片代替
      *
-     * @param context
+     * @param context         context
      * @param spannableString
-     * @param patten
-     * @param start
+     * @param patten          patten
+     * @param start           start
      * @throws Exception
      */
     private void dealExpression(Context context,
@@ -273,9 +273,9 @@ public class FaceConversionUtil {
     /**
      * 将带有表情标签的数据解析成对应的图片
      *
-     * @param tv
-     * @param source
-     * @return
+     * @param tv     tv
+     * @param source source
+     * @return SpannableString
      */
     public SpannableString getEmojiContent(final Context context, final TextView tv, String source) {
         SpannableString spannableString = new SpannableString(source);
@@ -315,7 +315,8 @@ public class FaceConversionUtil {
     /**
      * 解析字符
      *
-     * @param data
+     * @param data    data
+     * @param context context
      */
     private void ParseData(List<String> data, Context context) {
         if (data == null) {
@@ -353,8 +354,8 @@ public class FaceConversionUtil {
     /**
      * 获取分页数据
      *
-     * @param page
-     * @return
+     * @param page page
+     * @return List<ChatEmoji>
      */
     private List<ChatEmoji> getData(int page) {
         int startIndex = page * pageSize;

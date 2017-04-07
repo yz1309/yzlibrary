@@ -24,11 +24,11 @@ import java.util.regex.Pattern;
  * ——81~99表示省（自治区）辖县级市。
  *
  * 身份证合法性校验
- * <p>
+ *
  * --15位身份证号码：第7、8位为出生年份(两位数)，第9、10位为出生月份，第11、12位代表出生日期，第15位代表性别，奇数为男，偶数为女。
  * --18位身份证号码
  * 第7、8、9、10位为出生年份(四位数)，第11、第12位为出生月份，第13、14位代表出生日期，第17位代表性别，奇数为男，偶数为女。
- * </p>
+ *
  */
 @SuppressWarnings({"unchecked", "unused", "all"})
 public class IdcardValidator {
@@ -78,8 +78,8 @@ public class IdcardValidator {
     /**
      * 验证所有的身份证的合法性
      *
-     * @param idcard
-     * @return
+     * @param idcard idcard
+     * @return boolean
      */
     public static boolean isValidatedAllIdcard(String idcard) {
         if (idcard.length() == 15) {
@@ -119,8 +119,8 @@ public class IdcardValidator {
      * 5.通过上面得知如果余数是2，就会在身份证的第18位数字上出现罗马数字的Ⅹ。如果余数是10，身份证的最后一位号码就是2。
      * </p>
      *
-     * @param idcard
-     * @return
+     * @param idcard idcard
+     * @return boolean
      */
     public static boolean isValidate18Idcard(String idcard) {
         // 非18位为假
@@ -165,8 +165,8 @@ public class IdcardValidator {
     /**
      * 验证15位身份证的合法性,该方法验证不准确，最好是将15转为18位后再判断，该类中已提供。
      *
-     * @param idcard
-     * @return
+     * @param idcard idcard
+     * @return boolean
      */
     public boolean isValidate15Idcard(String idcard) {
         // 非15位为假
@@ -259,8 +259,8 @@ public class IdcardValidator {
     /**
      * 将15位的身份证转成18位身份证
      *
-     * @param idcard
-     * @return
+     * @param idcard idcard
+     * @return String
      */
     public static String convertIdcarBy15bit(String idcard) {
         String idcard17 = null;
@@ -314,8 +314,8 @@ public class IdcardValidator {
     /**
      * 15位和18位身份证号码的基本数字和位数验校
      *
-     * @param idcard
-     * @return
+     * @param  idcard
+     * @return boolean
      */
     public boolean isIdcard(String idcard) {
         return idcard == null || "".equals(idcard) ? false : Pattern.matches(
@@ -325,8 +325,8 @@ public class IdcardValidator {
     /**
      * 15位身份证号码的基本数字和位数验校
      *
-     * @param idcard
-     * @return
+     * @param idcard idcard
+     * @return boolean
      */
     public boolean is15Idcard(String idcard) {
         return idcard == null || "".equals(idcard) ? false : Pattern.matches(
@@ -337,8 +337,8 @@ public class IdcardValidator {
     /**
      * 18位身份证号码的基本数字和位数验校
      *
-     * @param idcard
-     * @return
+     * @param idcard idcard
+     * @return boolean
      */
     public boolean is18Idcard(String idcard) {
         return Pattern
@@ -350,8 +350,8 @@ public class IdcardValidator {
     /**
      * 数字验证
      *
-     * @param str
-     * @return
+     * @param str str
+     * @return boolean
      */
     public static boolean isDigital(String str) {
         return str == null || "".equals(str) ? false : str.matches("^[0-9]*$");
@@ -360,8 +360,8 @@ public class IdcardValidator {
     /**
      * 将身份证的每位和对应位的加权因子相乘之后，再得到和值
      *
-     * @param bit
-     * @return
+     * @param bit bit
+     * @return int
      */
     public static int getPowerSum(int[] bit) {
 
@@ -386,9 +386,8 @@ public class IdcardValidator {
     /**
      * 将和值与11取模得到余数进行校验码判断
      *
-     * @param checkCode
-     * @param sum17
-     * @return 校验位
+     * @param sum17 sum17
+     * @return String 校验位
      */
     public static String getCheckCodeBySum(int sum17) {
         String checkCode = null;
@@ -433,8 +432,8 @@ public class IdcardValidator {
     /**
      * 将字符数组转为整型数组
      *
-     * @param c
-     * @return
+     * @param c c
+     * @return int[]
      * @throws NumberFormatException
      */
     public static int[] converCharToInt(char[] c) throws NumberFormatException {

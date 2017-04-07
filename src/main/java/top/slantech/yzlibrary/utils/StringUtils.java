@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 
 /**
  * 字符串处理工具类
- * 功能描述：
+ * 功能
  * 1、将null转化为“” parseEmpty(String str)
  * 2、判断一个字符串是否为null或空值 isEmpty(String str);
  * 3、获取字符串中文字符的长度（每个中文算2个字符） chineseLength(String str);
@@ -43,10 +43,10 @@ import java.util.regex.Pattern;
  */
 public class StringUtils {
     /**
-     * 描述：将null转化为“”.
+     * 将null转化为“”.
      *
      * @param str 指定的字符串
-     * @return 字符串的String类型
+     * @return String 字符串的String类型
      */
     public static String parseEmpty(String str) {
         if (str == null || "null".equals(str.trim())) {
@@ -56,10 +56,10 @@ public class StringUtils {
     }
 
     /**
-     * 描述：判断一个字符串是否为null或空值.
+     * 判断一个字符串是否为null或空值.
      *
      * @param str 指定的字符串
-     * @return true or false
+     * @return boolean true or false
      */
     public static boolean isEmpty(String str) {
         return str == null || str.trim().length() == 0;
@@ -69,7 +69,7 @@ public class StringUtils {
      * 获取字符串中文字符的长度（每个中文算2个字符）.
      *
      * @param str 指定的字符串
-     * @return 中文字符的长度
+     * @return int 中文字符的长度
      */
     public static int chineseLength(String str) {
         int valueLength = 0;
@@ -90,10 +90,10 @@ public class StringUtils {
     }
 
     /**
-     * 描述：获取字符串的长度.
+     * 获取字符串的长度.
      *
      * @param str 指定的字符串
-     * @return 字符串的长度（中文字符计2个）
+     * @return int 字符串的长度（中文字符计2个）
      */
     public static int strLength(String str) {
         int valueLength = 0;
@@ -118,11 +118,11 @@ public class StringUtils {
     }
 
     /**
-     * 描述：获取指定长度的字符所在位置.
+     * 获取指定长度的字符所在位置.
      *
      * @param str  指定的字符串
      * @param maxL 要取到的长度（字符长度，中文字符计2个）
-     * @return 字符的所在位置
+     * @return int 字符的所在位置
      */
     public static int subStringLength(String str, int maxL) {
         int currentIndex = 0;
@@ -150,10 +150,10 @@ public class StringUtils {
     }
 
     /**
-     * 描述：从输入流中获得String.
+     * 从输入流中获得String.
      *
      * @param is 输入流
-     * @return 获得的String
+     * @return String 获得的String
      */
     public static String inputStreamConvertToString(InputStream is) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -183,10 +183,10 @@ public class StringUtils {
 
 
     /**
-     * 描述：不足2个字符的在前面补“0”.
+     * 不足2个字符的在前面补“0”.
      *
      * @param str 指定的字符串
-     * @return 至少2个字符的字符串
+     * @return String 至少2个字符的字符串
      */
     public static String strFormat2(String str) {
         try {
@@ -200,18 +200,18 @@ public class StringUtils {
     }
 
     /**
-     * 描述：截取字符串到指定字节长度.
+     * 截取字符串到指定字节长度.
      *
      * @param str    the str
      * @param length 指定字节长度
-     * @return 截取后的字符串
+     * @return String 截取后的字符串
      */
     public static String cutString(String str, int length) {
         return cutString(str, length, "");
     }
 
     /**
-     * 描述：标准化日期时间类型的数据，不足两位的补0.
+     * 标准化日期时间类型的数据，不足两位的补0.
      *
      * @param dateTime 预格式的时间字符串，如:2012-3-2 12:2:20
      * @return String 格式化好的时间字符串，如:2012-03-20 12:02:20
@@ -257,12 +257,12 @@ public class StringUtils {
     }
 
     /**
-     * 描述：截取字符串到指定字节长度.
+     * 截取字符串到指定字节长度.
      *
      * @param str    文本
      * @param length 字节长度
      * @param dot    省略符号
-     * @return 截取后的字符串
+     * @return String 截取后的字符串
      */
     public static String cutString(String str, int length, String dot) {
         int strBLen = strlen(str, "GBK");
@@ -290,12 +290,12 @@ public class StringUtils {
     }
 
     /**
-     * 描述：截取字符串从第一个指定字符.
+     * 截取字符串从第一个指定字符.
      *
      * @param str1   原文本
      * @param str2   指定字符
      * @param offset 偏移的索引
-     * @return 截取后的字符串
+     * @return String 截取后的字符串
      */
     public static String cutStringFromChar(String str1, String str2, int offset) {
         if (isEmpty(str1)) {
@@ -311,11 +311,11 @@ public class StringUtils {
     }
 
     /**
-     * 描述：获取字节长度.
+     * 获取字节长度.
      *
      * @param str     文本
      * @param charset 字符集（GBK）
-     * @return the int
+     * @return int
      */
     public static int strlen(String str, String charset) {
         if (str == null || str.length() == 0) {
@@ -334,7 +334,7 @@ public class StringUtils {
      * 获取大小的描述.
      *
      * @param size 字节个数
-     * @return 大小的描述
+     * @return String 大小的描述
      */
     public static String getSizeDesc(long size) {
         String suffix = "B";
@@ -358,8 +358,8 @@ public class StringUtils {
     /**
      * 获取大小的描述
      *
-     * @param length
-     * @return
+     * @param length length
+     * @return String
      */
     public static String getSizeDesc2(long length) {
         if (length >> 30 > 0L) {
@@ -379,8 +379,8 @@ public class StringUtils {
     /**
      * 获取大小的描述
      *
-     * @param size
-     * @return
+     * @param size size
+     * @return String
      */
     public static String getSizeDesc3(long size) {
         DecimalFormat formater = new DecimalFormat("####.00");
@@ -403,8 +403,8 @@ public class StringUtils {
     /**
      * 转换成Mb单位
      *
-     * @param length
-     * @return
+     * @param length length
+     * @return String
      */
     public static String formatSizeMb(long length) {
         float mbSize = Math.round(10.0F * (float) length / 1048576.0F) / 10.0F;
@@ -412,10 +412,10 @@ public class StringUtils {
     }
 
     /**
-     * 描述：ip地址转换为10进制数.
+     * ip地址转换为10进制数.
      *
      * @param ip the ip
-     * @return the long
+     * @return long
      */
     public static long ip2int(String ip) {
         ip = ip.replace(".", ",");
@@ -428,7 +428,7 @@ public class StringUtils {
      *
      * @param num   需要截取的小数字符串
      * @param scale 小数位数
-     * @return
+     * @return double
      */
     public static double getDoubleXS(String num, int scale) {
         BigDecimal bd = new BigDecimal(num);
@@ -440,8 +440,8 @@ public class StringUtils {
     /**
      * 复制文本
      *
-     * @param context
-     * @param txt
+     * @param context context
+     * @param txt     txt
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static void copyTxt(Context context, String txt) {
@@ -456,8 +456,8 @@ public class StringUtils {
      * 米转化成公里
      * 1公里=1千米
      *
-     * @param a
-     * @return
+     * @param a a
+     * @return String
      */
     public static String getGongLiFromMi(float a) {
         String rtn = "";
@@ -474,7 +474,7 @@ public class StringUtils {
      * 获取字符串中的数字
      *
      * @param str 源字符串
-     * @return
+     * @return String
      */
     public static String getIntFromString(String str) {
         Pattern p = Pattern.compile("[^0-9]");

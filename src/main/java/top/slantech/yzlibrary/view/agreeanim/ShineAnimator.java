@@ -5,15 +5,6 @@ import android.annotation.TargetApi;
 import android.graphics.Canvas;
 import android.os.Build;
 
-
-/**
- * @author Chad
- * @title com.sackcentury.shinebuttonlib
- * @description
- * @modifier
- * @date
- * @since 16/7/5 下午5:09
- **/
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class ShineAnimator extends ValueAnimator {
 

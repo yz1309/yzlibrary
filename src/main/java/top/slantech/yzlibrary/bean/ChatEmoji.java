@@ -2,7 +2,6 @@ package top.slantech.yzlibrary.bean;
 
 
 /**
- * 
  * 表情对象实体
  */
 public class ChatEmoji {

@@ -16,7 +16,6 @@ import top.slantech.yzlibrary.R;
 
 /**
  * 带多个圆点旋转动画进度条和文本[彩色]
- * Created by Administrator on 2014/9/18.
  */
 public class ProgressDialogCA2 extends ProgressDialog {
 

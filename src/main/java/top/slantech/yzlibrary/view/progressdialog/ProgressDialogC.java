@@ -8,7 +8,6 @@ import android.view.View;
 
 import top.slantech.yzlibrary.R;
 
-
 /**
  * 带单线旋转进度条
  */

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 /**
  * 数据格式检查
- * 功能描述：
+ * 功能
  * 1、检查手机号码合法性 checkMDN("18224411300",true); or isMobileNo("18224411300");
  * 2、检测邮箱合法性  checkEmailValid("yz130@163.com");
  * 3、检查是否是IPV4 isIPv4Address(12.12.10.26);
@@ -37,8 +37,8 @@ public class CheckUtils {
     /**
      * 检查手机号码合法性
      *
-     * @param mobiles
-     * @return
+     * @param mobiles mobiles
+     * @return boolean
      */
     public static boolean isMobileNo(String mobiles) {
         Pattern p = Pattern
@@ -52,8 +52,8 @@ public class CheckUtils {
     /**
      * 检查手机号码合法性
      *
-     * @param mdn
-     * @return
+     * @param mdn mdn
+     * @return boolean
      */
     public static boolean checkMDN(String mdn, boolean checkLen) {
         if (mdn == null || mdn.equals("")) {
@@ -114,8 +114,8 @@ public class CheckUtils {
     /**
      * 检测邮箱合法性
      *
-     * @param email
-     * @return
+     * @param email email
+     * @return boolean
      */
     public static boolean checkEmailValid(String email) {
         if ((email == null) || (email.trim().length() == 0)) {
@@ -148,8 +148,8 @@ public class CheckUtils {
     /**
      * 检查是否IPV4地址
      *
-     * @param input
-     * @return
+     * @param input input
+     * @return boolean
      */
     public static boolean isIPv4Address(final String input) {
         return IPV4_PATTERN.matcher(input).matches();
@@ -158,8 +158,8 @@ public class CheckUtils {
     /**
      * 检查是否IPV6地址
      *
-     * @param input
-     * @return
+     * @param input input
+     * @return boolean
      */
     public static boolean isIPv6StdAddress(final String input) {
         return IPV6_STD_PATTERN.matcher(input).matches();
@@ -179,7 +179,7 @@ public class CheckUtils {
 
 
     /**
-     * 描述：是否只是字母和数字.
+     * 是否只是字母和数字.
      *
      * @param str 指定的字符串
      * @return 是否只是字母和数字:是为true，否则false
@@ -194,10 +194,10 @@ public class CheckUtils {
     }
 
     /**
-     * 描述：是否只是数字.
+     * 是否只是数字.
      *
      * @param str 指定的字符串
-     * @return 是否只是数字:是为true，否则false
+     * @return Boolean 是否只是数字:是为true，否则false
      */
     public static Boolean isNumber(String str) {
         Boolean isNumber = false;
@@ -210,10 +210,10 @@ public class CheckUtils {
 
 
     /**
-     * 描述：是否是中文.
+     * 是否是中文.
      *
      * @param str 指定的字符串
-     * @return 是否是中文:是为true，否则false
+     * @return Boolean 是否是中文:是为true，否则false
      */
     public static Boolean isChinese(String str) {
         Boolean isChinese = true;
@@ -235,10 +235,10 @@ public class CheckUtils {
     }
 
     /**
-     * 描述：是否包含中文.
+     * 是否包含中文.
      *
      * @param str 指定的字符串
-     * @return 是否包含中文:是为true，否则false
+     * @return Boolean 是否包含中文:是为true，否则false
      */
     public static Boolean isContainChinese(String str) {
         Boolean isChinese = false;
@@ -263,10 +263,10 @@ public class CheckUtils {
     /**
      * 判断是否为一个合法的url地址
      *
-     * @param str
-     * @return
+     * @param str str
+     * @return Boolean
      */
-    public static boolean isUrl(String str) {
+    public static Boolean isUrl(String str) {
         if (str == null || str.trim().length() == 0)
             return false;
         return URL.matcher(str).matches();

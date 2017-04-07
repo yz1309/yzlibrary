@@ -14,8 +14,8 @@ public class Encode {
     /**
      * 转换为%E4%BD%A0形式
      *
-     * @param s
-     * @return
+     * @param s s
+     * @return String
      */
     public static String toUtf8String(String s) {
         StringBuffer sb = new StringBuffer();
@@ -47,8 +47,8 @@ public class Encode {
     /**
      * 将%E4%BD%A0转换为汉字
      *
-     * @param s
-     * @return
+     * @param s s
+     * @return String
      */
     public static String unescape(String s) {
         StringBuffer sbuf = new StringBuffer();
@@ -105,6 +105,7 @@ public class Encode {
      * 将String进行MD5编码
      *
      * @param value 待转换的流
+     * @return String
      */
     public static String encodeMD5(String value) {
         StringBuffer enStr = new StringBuffer();

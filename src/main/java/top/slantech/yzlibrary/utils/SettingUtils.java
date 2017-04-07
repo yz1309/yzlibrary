@@ -25,16 +25,16 @@ import top.slantech.yzlibrary.interfaces.OnGetDataLinstener;
 public class SettingUtils {
 
     /**
-     * Gps是否打开
-     * 需要<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />权限
+     * Gps是否打开android.permission.ACCESS_FINE_LOCATION权限
      *
-     * @param context the context
-     * @return true, if is gps enabled
+     * @param context context
+     * @return boolean true, if is gps enabled
      */
     public static boolean isGpsEnabled(Context context) {
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
+
     /**
      * 调用系统分享功能 分享文本
      *
@@ -77,7 +77,7 @@ public class SettingUtils {
     /**
      * 是否root 1
      *
-     * @return
+     * @return boolean
      */
     public static boolean isRootSystem() {
         if (systemRootState == kSystemRootStateEnable) {
@@ -89,7 +89,7 @@ public class SettingUtils {
         final String kSuSearchPaths[] = {"/system/bin/", "/system/xbin/",
                 "/system/sbin/", "/sbin/", "/vendor/bin/"};
         try {
-            for (String temp:kSuSearchPaths){
+            for (String temp : kSuSearchPaths) {
                 f = new File(temp + "su");
                 if (f != null && f.exists()) {
                     systemRootState = kSystemRootStateEnable;
@@ -105,7 +105,7 @@ public class SettingUtils {
     /**
      * 是否root 2
      *
-     * @return
+     * @param linstener linstener
      */
     public static synchronized void isRootSystem2(final OnGetDataLinstener linstener) {
         new Thread() {
@@ -144,7 +144,7 @@ public class SettingUtils {
     /**
      * 是否root 2
      *
-     * @return
+     * @return boolean
      */
     public static synchronized boolean getRootAhth() {
         Process process = null;
@@ -178,8 +178,9 @@ public class SettingUtils {
 
     /**
      * 检查wifi是否打开
-     * @param context
-     * @return
+     *
+     * @param context context
+     * @return boolean
      */
     public static boolean isWifiOpened(Context context) {
         try {

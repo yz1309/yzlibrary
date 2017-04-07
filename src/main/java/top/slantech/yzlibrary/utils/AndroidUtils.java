@@ -15,7 +15,7 @@ public class AndroidUtils {
     /**
      * 获取SDK版本号
      *
-     * @return
+     * @return int
      */
     public static int getAndroidSDKVersion() {
         int version = 0;
@@ -28,8 +28,8 @@ public class AndroidUtils {
 
     /**
      * 判断程序是否在前台运行
-     * @param context
-     * @return
+     * @param context context
+     * @return boolean
      */
     public static boolean isAppOnForeground(Context context) {
         ActivityManager activityManager = (ActivityManager) context.getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);

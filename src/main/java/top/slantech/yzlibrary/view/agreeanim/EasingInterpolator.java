@@ -3,7 +3,6 @@ package top.slantech.yzlibrary.view.agreeanim;
 import android.animation.TimeInterpolator;
 import android.annotation.TargetApi;
 import android.os.Build;
-import android.support.annotation.NonNull;
 
 
 /**
@@ -14,7 +13,7 @@ public class  EasingInterpolator implements TimeInterpolator {
 
     private final Ease ease;
 
-    public EasingInterpolator(@NonNull Ease ease) {
+    public EasingInterpolator(Ease ease) {
         this.ease = ease;
     }
 

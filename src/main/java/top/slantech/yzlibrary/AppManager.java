@@ -13,7 +13,7 @@ import java.util.Stack;
  * 2、获取当前Activity（堆栈中最后一个压入的） currentActivity();
  * 3、结束当前Activity（堆栈中最后一个压入的） finishActivity();
  * 4、结束指定的Activity finishActivity(Activity activity);
- * 5、结束指定类名的Activity finishActivity(Class<?> cls);
+ * 5、结束指定类名的Activity finishActivity(cls);
  * 6、结束所有Activity finishAllActivity();
  * 7、退出应用程序 AppExit(Context context);
  * 8、移除指定的Activity removeActivity(Activity activity);
@@ -38,6 +38,7 @@ public class AppManager {
 
     /**
      * 添加Activity到堆栈
+     * @param activity activity
      */
     public void addActivity(Activity activity) {
         if (activityStack == null) {
@@ -64,6 +65,7 @@ public class AppManager {
 
     /**
      * 结束指定的Activity
+     * @param activity activity
      */
     public void finishActivity(Activity activity) {
         if (activity != null) {
@@ -75,6 +77,7 @@ public class AppManager {
 
     /**
      * 结束指定类名的Activity
+     * @param cls cls
      */
     public void finishActivity(Class<?> cls) {
         for (Activity activity : activityStack) {
@@ -101,19 +104,11 @@ public class AppManager {
 
     /**
      * 退出应用程序
+     * @param context context
      */
     public void AppExit(Context context) {
         try {
             finishAllActivity();
-            /*Intent intent = new Intent(context, MainActivity.class);  
-            PendingIntent restartIntent = PendingIntent.getActivity(    
-            		context, 0, intent,    
-                    Intent.FLAG_ACTIVITY_NEW_TASK);                                                 
-            //退出程序                                          
-            AlarmManager mgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);    
-            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 1000,    
-                    restartIntent); // 1秒钟后重启应用
-*/
             // 杀死该应用进程
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(0);
@@ -123,7 +118,7 @@ public class AppManager {
 
     /**
      * 移除指定的Activity
-     * @param activity
+     * @param activity activity
      */
     public void removeActivity(Activity activity) {
         if (activity != null) {

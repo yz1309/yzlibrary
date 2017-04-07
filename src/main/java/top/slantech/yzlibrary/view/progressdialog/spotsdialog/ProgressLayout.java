@@ -9,10 +9,6 @@ import android.widget.FrameLayout;
 
 import top.slantech.yzlibrary.R;
 
-/**
- * Created by Maxim Dybarsky | maxim.dybarskyy@gmail.com
- * on 13.01.15 at 17:34
- */
 public class ProgressLayout extends FrameLayout {
 
     private static final int DEFAULT_COUNT = 5;

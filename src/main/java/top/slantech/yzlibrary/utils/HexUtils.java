@@ -38,13 +38,15 @@ public class HexUtils {
 
     /*
     * 将字符串编码成16进制数字,适用于所有字符（包括中文）
+     * @param str str
+     * @return String
     */
     public static String encode(String str) {
         //根据默认编码获取字节数组
         byte[] bytes = str.getBytes();
         StringBuilder sb = new StringBuilder(bytes.length * 2);
         //将字节数组中每个字节拆解成2位16进制整数
-        for (byte model:bytes){
+        for (byte model : bytes) {
             sb.append(hexString.charAt((model & 0xf0) >> 4));
             sb.append(hexString.charAt((model & 0x0f)));
         }
@@ -53,6 +55,8 @@ public class HexUtils {
 
     /*
     * 将16进制数字解码成字符串,适用于所有字符（包括中文）
+     * @param bytes bytes
+     * @return String
     */
     public static String decode(String bytes) {
         int len = bytes.length();
@@ -65,7 +69,8 @@ public class HexUtils {
 
     /*
     * 把16进制字符串转换成字节数组
-    * @param hex @return
+     * @param hex hex
+     * @return byte[]
     */
     public static byte[] hexStringToByte(String hex) {
         int len = (hex.length() / 2);
@@ -86,13 +91,13 @@ public class HexUtils {
     /**
      * 把字节数组转换成16进制字符串
      *
-     * @param bArray
-     * @return
+     * @param bArray bArray
+     * @return String
      */
     public static final String bytesToHexString(byte[] bArray) {
         StringBuffer sb = new StringBuffer(bArray.length);
         String sTemp;
-        for (byte model:bArray){
+        for (byte model : bArray) {
             sTemp = Integer.toHexString(0xFF & model);
             if (sTemp.length() < 2)
                 sb.append(0);
@@ -103,12 +108,13 @@ public class HexUtils {
 
     /**
      * BCD码转为10进制串(阿拉伯数据)
+     *
      * @param bytes BCD码
-     * @return 10进制串
+     * @return String 10进制串
      */
     public static String bcd2Str(byte[] bytes) {
         StringBuffer temp = new StringBuffer(bytes.length * 2);
-        for (byte model:bytes){
+        for (byte model : bytes) {
             temp.append((byte) ((model & 0xf0) >>> 4));
             temp.append((byte) (model & 0x0f));
         }
@@ -117,8 +123,9 @@ public class HexUtils {
 
     /**
      * 10进制串转为BCD码
+     *
      * @param asc 10进制串
-     * @return BCD码
+     * @return byte[] BCD码
      */
     public static byte[] str2Bcd(String asc) {
         int len = asc.length();

@@ -525,8 +525,8 @@ public class FirstNameParserUtil {
     /**
      * 获取字符串中的首字拼音
      *
-     * @param input
-     * @return
+     * @param input input
+     * @return String
      */
     public static String converFirstName(String input) {
         if (null == input) {
@@ -545,8 +545,8 @@ public class FirstNameParserUtil {
     /**
      * 获取字符串中的全部拼音
      *
-     * @param input
-     * @return
+     * @param input input
+     * @return String
      */
     public static String converFullName(String input) {
         if (null == input) {

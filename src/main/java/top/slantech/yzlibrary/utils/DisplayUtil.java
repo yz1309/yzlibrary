@@ -17,9 +17,9 @@ public class DisplayUtil {
 	private static final String TAG = "DisplayUtil";
 	/**
 	 * dip转px
-	 * @param context
-	 * @param dipValue
-	 * @return
+	 * @param context context
+	 * @param dipValue dipValue
+	 * @return int
 	 */
 	public static int dip2px(Context context, float dipValue){            
 		final float scale = context.getResources().getDisplayMetrics().density;                 
@@ -28,9 +28,9 @@ public class DisplayUtil {
 	
 	/**
 	 * px转dip
-	 * @param context
-	 * @param pxValue
-	 * @return
+	 * @param context context
+	 * @param pxValue pxValue
+	 * @return int
 	 */
 	public static int px2dip(Context context, float pxValue){                
 		final float scale = context.getResources().getDisplayMetrics().density;                 
@@ -39,8 +39,8 @@ public class DisplayUtil {
 	
 	/**
 	 * 获取屏幕宽度和高度，单位为px
-	 * @param context
-	 * @return
+	 * @param context context
+	 * @return Point
 	 */
 	public static Point getScreenMetrics(Context context){
 		DisplayMetrics dm =context.getResources().getDisplayMetrics();
@@ -51,8 +51,8 @@ public class DisplayUtil {
 	
 	/**
 	 * 获取屏幕长宽比
-	 * @param context
-	 * @return
+	 * @param context context
+	 * @return float
 	 */
 	public static float getScreenRate(Context context){
 		Point P = getScreenMetrics(context);

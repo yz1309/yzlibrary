@@ -24,10 +24,7 @@ import android.widget.TextView;
 /**
  * 数字提醒
  * A simple text label view that can be applied as a "badge" to any given
- * {@link View}. This class is intended to be instantiated at
  * runtime rather than included in XML layouts.
- *
- * @author Jeff Gilfelt
  */
 public class BadgeView extends TextView {
 
@@ -71,32 +68,21 @@ public class BadgeView extends TextView {
     }
 
     /**
-     * Constructor -
+     * Constructor create a new BadgeView instance attached to a target
      *
-     * create a new BadgeView instance attached to a target
-     * {@link View}.
-     *
-     * @param context
-     *            context for this view.
-     * @param target
-     *            the View to attach the badge to.
+     * @param context context for this view.
+     * @param target  the View to attach the badge to.
      */
     public BadgeView(Context context, View target) {
         this(context, null, android.R.attr.textViewStyle, target, 0);
     }
 
     /**
-     * Constructor -
+     * Constructorcreate a new BadgeView instance attached to a target
      *
-     * create a new BadgeView instance attached to a target
-     * {@link TabWidget} tab at a given index.
-     * 
-     * @param context
-     *            context for this view.
-     * @param target
-     *            the TabWidget to attach the badge to.
-     * @param index
-     *            the position of the tab within the target.
+     * @param context context for this view.
+     * @param target  the TabWidget to attach the badge to.
+     * @param index   the position of the tab within the target.
      */
     public BadgeView(Context context, TabWidget target, int index) {
         this(context, null, android.R.attr.textViewStyle, target, index);
@@ -182,7 +168,6 @@ public class BadgeView extends TextView {
 
     /**
      * Make the badge visible in the UI.
-     * 
      */
     public void show() {
         show(false, null);
@@ -190,9 +175,8 @@ public class BadgeView extends TextView {
 
     /**
      * Make the badge visible in the UI.
-     * 
-     * @param animate
-     *            flag to apply the default fade-in animation.
+     *
+     * @param animate flag to apply the default fade-in animation.
      */
     public void show(boolean animate) {
         show(animate, fadeIn);
@@ -200,9 +184,8 @@ public class BadgeView extends TextView {
 
     /**
      * Make the badge visible in the UI.
-     * 
-     * @param anim
-     *            Animation to apply to the view when made visible.
+     *
+     * @param anim Animation to apply to the view when made visible.
      */
     public void show(Animation anim) {
         show(true, anim);
@@ -210,7 +193,6 @@ public class BadgeView extends TextView {
 
     /**
      * Make the badge non-visible in the UI.
-     * 
      */
     public void hide() {
         hide(false, null);
@@ -218,9 +200,8 @@ public class BadgeView extends TextView {
 
     /**
      * Make the badge non-visible in the UI.
-     * 
-     * @param animate
-     *            flag to apply the default fade-out animation.
+     *
+     * @param animate flag to apply the default fade-out animation.
      */
     public void hide(boolean animate) {
         hide(animate, fadeOut);
@@ -228,9 +209,8 @@ public class BadgeView extends TextView {
 
     /**
      * Make the badge non-visible in the UI.
-     * 
-     * @param anim
-     *            Animation to apply to the view when made non-visible.
+     *
+     * @param anim Animation to apply to the view when made non-visible.
      */
     public void hide(Animation anim) {
         hide(true, anim);
@@ -238,7 +218,6 @@ public class BadgeView extends TextView {
 
     /**
      * Toggle the badge visibility in the UI.
-     * 
      */
     public void toggle() {
         toggle(false, null, null);
@@ -246,9 +225,8 @@ public class BadgeView extends TextView {
 
     /**
      * Toggle the badge visibility in the UI.
-     * 
-     * @param animate
-     *            flag to apply the default fade-in/out animation.
+     *
+     * @param animate flag to apply the default fade-in/out animation.
      */
     public void toggle(boolean animate) {
         toggle(animate, fadeIn, fadeOut);
@@ -256,11 +234,9 @@ public class BadgeView extends TextView {
 
     /**
      * Toggle the badge visibility in the UI.
-     * 
-     * @param animIn
-     *            Animation to apply to the view when made visible.
-     * @param animOut
-     *            Animation to apply to the view when made non-visible.
+     *
+     * @param animIn  Animation to apply to the view when made visible.
+     * @param animOut Animation to apply to the view when made non-visible.
      */
     public void toggle(Animation animIn, Animation animOut) {
         toggle(true, animIn, animOut);
@@ -301,9 +277,8 @@ public class BadgeView extends TextView {
     /**
      * Increment the numeric badge label. If the current badge label cannot be
      * converted to an integer value, its label will be set to "0".
-     * 
-     * @param offset
-     *            the increment offset.
+     *
+     * @param offset the increment offset.
      */
     public int increment(int offset) {
         CharSequence txt = getText();
@@ -325,9 +300,8 @@ public class BadgeView extends TextView {
     /**
      * Decrement the numeric badge label. If the current badge label cannot be
      * converted to an integer value, its label will be set to "0".
-     * 
-     * @param offset
-     *            the decrement offset.
+     *
+     * @param offset the decrement offset.
      */
     public int decrement(int offset) {
         return increment(-offset);
@@ -336,7 +310,7 @@ public class BadgeView extends TextView {
     private ShapeDrawable getDefaultBackground() {
 
         int r = dipToPixels(DEFAULT_CORNER_RADIUS_DIP);
-        float[] outerR = new float[] { r, r, r, r, r, r, r, r };
+        float[] outerR = new float[]{r, r, r, r, r, r, r, r};
 
         RoundRectShape rr = new RoundRectShape(outerR, null, null);
         ShapeDrawable drawable = new ShapeDrawable(rr);
@@ -352,28 +326,28 @@ public class BadgeView extends TextView {
                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 
         switch (badgePosition) {
-        case POSITION_TOP_LEFT:
-            lp.gravity = Gravity.LEFT | Gravity.TOP;
-            lp.setMargins(badgeMarginH, badgeMarginV, 0, 0);
-            break;
-        case POSITION_TOP_RIGHT:
-            lp.gravity = Gravity.RIGHT | Gravity.TOP;
-            lp.setMargins(0, badgeMarginV, badgeMarginH, 0);
-            break;
-        case POSITION_BOTTOM_LEFT:
-            lp.gravity = Gravity.LEFT | Gravity.BOTTOM;
-            lp.setMargins(badgeMarginH, 0, 0, badgeMarginV);
-            break;
-        case POSITION_BOTTOM_RIGHT:
-            lp.gravity = Gravity.RIGHT | Gravity.BOTTOM;
-            lp.setMargins(0, 0, badgeMarginH, badgeMarginV);
-            break;
-        case POSITION_CENTER:
-            lp.gravity = Gravity.CENTER;
-            lp.setMargins(0, 0, 0, 0);
-            break;
-        default:
-            break;
+            case POSITION_TOP_LEFT:
+                lp.gravity = Gravity.LEFT | Gravity.TOP;
+                lp.setMargins(badgeMarginH, badgeMarginV, 0, 0);
+                break;
+            case POSITION_TOP_RIGHT:
+                lp.gravity = Gravity.RIGHT | Gravity.TOP;
+                lp.setMargins(0, badgeMarginV, badgeMarginH, 0);
+                break;
+            case POSITION_BOTTOM_LEFT:
+                lp.gravity = Gravity.LEFT | Gravity.BOTTOM;
+                lp.setMargins(badgeMarginH, 0, 0, badgeMarginV);
+                break;
+            case POSITION_BOTTOM_RIGHT:
+                lp.gravity = Gravity.RIGHT | Gravity.BOTTOM;
+                lp.setMargins(0, 0, badgeMarginH, badgeMarginV);
+                break;
+            case POSITION_CENTER:
+                lp.gravity = Gravity.CENTER;
+                lp.setMargins(0, 0, 0, 0);
+                break;
+            default:
+                break;
         }
 
         setLayoutParams(lp);
@@ -382,7 +356,6 @@ public class BadgeView extends TextView {
 
     /**
      * Returns the target View this badge has been attached to.
-     * 
      */
     public View getTarget() {
         return target;
@@ -390,7 +363,6 @@ public class BadgeView extends TextView {
 
     /**
      * Is this badge currently visible in the UI?
-     * 
      */
     @Override
     public boolean isShown() {
@@ -399,10 +371,8 @@ public class BadgeView extends TextView {
 
     /**
      * Returns the positioning of this badge.
-     * 
      * one of POSITION_TOP_LEFT, POSITION_TOP_RIGHT, POSITION_BOTTOM_LEFT,
      * POSITION_BOTTOM_RIGHT, POSTION_CENTER.
-     * 
      */
     public int getBadgePosition() {
         return badgePosition;
@@ -410,11 +380,9 @@ public class BadgeView extends TextView {
 
     /**
      * Set the positioning of this badge.
-     * 
-     * @param layoutPosition
-     *            one of POSITION_TOP_LEFT, POSITION_TOP_RIGHT,
-     *            POSITION_BOTTOM_LEFT, POSITION_BOTTOM_RIGHT, POSTION_CENTER.
-     * 
+     *
+     * @param layoutPosition one of POSITION_TOP_LEFT, POSITION_TOP_RIGHT,
+     *                       POSITION_BOTTOM_LEFT, POSITION_BOTTOM_RIGHT, POSTION_CENTER.
      */
     public void setBadgePosition(int layoutPosition) {
         this.badgePosition = layoutPosition;
@@ -423,7 +391,6 @@ public class BadgeView extends TextView {
     /**
      * Returns the horizontal margin from the target View that is applied to
      * this badge.
-     * 
      */
     public int getHorizontalBadgeMargin() {
         return badgeMarginH;
@@ -432,7 +399,6 @@ public class BadgeView extends TextView {
     /**
      * Returns the vertical margin from the target View that is applied to this
      * badge.
-     * 
      */
     public int getVerticalBadgeMargin() {
         return badgeMarginV;
@@ -441,9 +407,8 @@ public class BadgeView extends TextView {
     /**
      * Set the horizontal/vertical margin from the target View that is applied
      * to this badge.
-     * 
-     * @param badgeMargin
-     *            the margin in pixels.
+     *
+     * @param badgeMargin the margin in pixels.
      */
     public void setBadgeMargin(int badgeMargin) {
         this.badgeMarginH = badgeMargin;
@@ -453,11 +418,9 @@ public class BadgeView extends TextView {
     /**
      * Set the horizontal/vertical margin from the target View that is applied
      * to this badge.
-     * 
-     * @param horizontal
-     *            margin in pixels.
-     * @param vertical
-     *            margin in pixels.
+     *
+     * @param horizontal margin in pixels.
+     * @param vertical   margin in pixels.
      */
     public void setBadgeMargin(int horizontal, int vertical) {
         this.badgeMarginH = horizontal;
@@ -467,7 +430,6 @@ public class BadgeView extends TextView {
 
     /**
      * Returns the color value of the badge background.
-     * 
      */
     public int getBadgeBackgroundColor() {
         return badgeColor;
@@ -475,9 +437,8 @@ public class BadgeView extends TextView {
 
     /**
      * Set the color value of the badge background.
-     * 
-     * @param badgeColor
-     *            the badge background color.
+     *
+     * @param badgeColor the badge background color.
      */
     public void setBadgeBackgroundColor(int badgeColor) {
         this.badgeColor = badgeColor;

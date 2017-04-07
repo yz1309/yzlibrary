@@ -20,7 +20,7 @@ import java.util.List;
  * 图片压缩工具类
  * 功能描述：
  * 1、压缩单张图片方法 compressImage(Activity,"/sd/xx.png",new ProcessImgCallBack);
- * 2、压缩图片集合方法 compressImageList(Activity,List<String>,new ProcessImgCallBack);
+ * 2、压缩图片集合方法 compressImageList(Activity,Liststring ,new ProcessImgCallBack);
  */
 public class ImageCompressUtil {
 
@@ -32,9 +32,10 @@ public class ImageCompressUtil {
 
     /**
      * 压缩单张图片方法
-     * @param ctx
-     * @param filePath
-     * @param callBack
+     *
+     * @param ctx      ctx
+     * @param filePath filePath
+     * @param callBack callBack
      */
     public static void compressImage(final Context ctx, final String filePath, final ProcessImgCallBack callBack) {
         mImagePath = "";//清空路径
@@ -53,9 +54,10 @@ public class ImageCompressUtil {
 
     /**
      * 压缩图片集合方法
-     * @param ctx
-     * @param fileList
-     * @param callBack
+     *
+     * @param ctx      ctx
+     * @param fileList fileList
+     * @param callBack callBack
      */
     public static void compressImageList(final Context ctx, final List<String> fileList, final ProcessImgListCallBack callBack) {
         mImageList.clear();//清空集合
@@ -81,9 +83,10 @@ public class ImageCompressUtil {
 
     /**
      * 图片压缩的方法
-     * @param ctx
-     * @param filePath
-     * @return
+     *
+     * @param ctx      ctx
+     * @param filePath filePath
+     * @return String
      */
     public static String compress(Context ctx, String filePath) {
 
@@ -137,13 +140,12 @@ public class ImageCompressUtil {
 
 
     /**
-     * 计算压缩比例值
-     * 按照2、3、4...倍压缩
+     * 计算压缩比例值按照2、3、4...倍压缩
      *
      * @param options   解析图片的配置信息
      * @param reqWidth  所需图片压缩尺寸最小宽度
      * @param reqHeight 所需图片压缩尺寸最小高度
-     * @return
+     * @return int
      */
     public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
         final int picheight = options.outHeight;
@@ -178,9 +180,11 @@ public class ImageCompressUtil {
     }
 
 
-
     /**
      * 将压缩后的图片存储在缓存中
+     *
+     * @param ctx ctx
+     * @return File
      */
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     public static File getDiskCacheDir(Context ctx) {

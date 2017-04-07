@@ -32,12 +32,9 @@ public class EquipInfoUtils {
 
 
     /**
-     * 系统版本信息
-     * [0] 内核版本
-     * [1] 系统版本
-     * [2] 手机型号
-     * [3] 系统版本
-     * [4] 品牌
+     * 系统版本信息[0] 内核版本,[1] 系统版本,[2] 手机型号,[3] 系统版本,[4] 品牌
+     *
+     * @return String[]
      */
     public static String[] getVersion() throws Exception {
         String[] version = {"null", "null", "null", "null", "null"};
@@ -62,9 +59,9 @@ public class EquipInfoUtils {
     }
 
     /**
-     * CPU
-     * [0] CPU型号
-     * [1] CPU硬件
+     * CPU[0] CPU型号,[1] CPU硬件
+     *
+     * @return String[]
      */
     public static String[] getCpuInfo() {
         String str1 = "/proc/cpuinfo";
@@ -98,7 +95,7 @@ public class EquipInfoUtils {
     /**
      * 获取CPU核心数
      *
-     * @return
+     * @return int
      */
     public static int getNumCores() {
         // Private Class to display only CPU devices in the directory listing
@@ -131,7 +128,7 @@ public class EquipInfoUtils {
     /**
      * 主频
      *
-     * @return
+     * @return String
      */
     public static String getMaxCpuFreq() {
         String result = "";
@@ -156,7 +153,7 @@ public class EquipInfoUtils {
     /**
      * 获取RAM空间大小
      *
-     * @return
+     * @return String
      */
     public static String getTotalRAMMemory() {
         String str1 = "/proc/meminfo";
@@ -175,12 +172,10 @@ public class EquipInfoUtils {
     }
 
 
-
-
     /**
-     * 获取ROM空间
-     * [0] total
-     * [1] rest
+     * 获取ROM空间[0] total,[1] rest
+     *
+     * @return long[]
      */
     public static long[] getRomMemroy() throws Exception {
         long[] romInfo = new long[2];
@@ -205,9 +200,9 @@ public class EquipInfoUtils {
     }
 
     /**
-     * 获取SD空间
-     * [0] total
-     * [1] rest
+     * 获取SD空间[0] total,[1] rest
+     *
+     * @return long[]
      */
     public static long[] getSDCardMemory() {
         long[] sdCardInfo = new long[2];
@@ -227,11 +222,9 @@ public class EquipInfoUtils {
 
 
     /*
-    * 获取手机屏幕信息
-    * [0] 宽
-    * [1] 高
-    * [2] 密度
-    * [3] 像素密度
+    * 获取手机屏幕信息[0] 宽,[1] 高,[2] 密度,[3] 像素密度
+     * @param Context Context
+     * @return String[]
     * */
     public static String[] getDisplayMetrics(Context cx) {
         String str = "";
@@ -255,8 +248,8 @@ public class EquipInfoUtils {
     /**
      * 获取电池容量
      *
-     * @param context
-     * @return
+     * @param context context
+     * @return double
      */
     public static double getBatteryCapacity(Context context) {
         Object mPowerProfile_ = null;

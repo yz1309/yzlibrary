@@ -1,7 +1,6 @@
 package top.slantech.yzlibrary.utils;
 
 import android.text.TextUtils;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,8 +10,7 @@ import java.util.GregorianCalendar;
 
 
 /**
- * 时间工具类 Created by slantech
- * 功能描述：
+ * 时间工具类
  * 1、String类型的日期时间转化为Date类型 getDateByFormat("2016-04-15 12:20:11","yyyy-MM-dd HH:mm:ss");
  * 2、获取Date偏移之后的Date getDateByOffset(date,Calendar.DATE,1);
  * 3、获取字符串日期时间的字符串(可偏移) getStringByOffset("2016-04-15 12:20:11","yyyy-MM-dd HH:mm:ss",Calendar.DATE,1);
@@ -46,7 +44,7 @@ import java.util.GregorianCalendar;
  * 31、得到2个时间戳之间相差的 天 时 分 秒 getDate(1470816365,1470816415);
  * 32、阳历节日 calendarFestival(calendar);
  * 33、阴历节日 lunarHoliday(calendar);
- * 34、
+ * Created by slantech on 2016/08/31 11:38
  */
 public class CalendarTool {
 
@@ -120,7 +118,7 @@ public class CalendarTool {
 
 
     /**
-     * 描述：String类型的日期时间转化为Date类型.
+     * String类型的日期时间转化为Date类型.
      *
      * @param strDate String形式的日期时间
      * @param format  格式化字符串，如："yyyy-MM-dd HH:mm:ss"
@@ -138,7 +136,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取Date偏移之后的Date.
+     * 获取Date偏移之后的Date.
      *
      * @param date          日期时间
      * @param calendarField Calendar属性，对应offset的值， 如(Calendar.DATE,表示+offset天,Calendar.HOUR_OF_DAY,表示＋offset小时)
@@ -157,7 +155,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取字符串日期时间的字符串(可偏移).
+     * 获取字符串日期时间的字符串(可偏移).
      *
      * @param strDate       String形式的日期时间
      * @param format        格式化字符串，如："yyyy-MM-dd HH:mm:ss"
@@ -181,7 +179,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：Date类型转化为String类型(可偏移).
+     * Date类型转化为String类型(可偏移).
      *
      * @param date          the date
      * @param format        the format
@@ -205,7 +203,7 @@ public class CalendarTool {
 
 
     /**
-     * 描述：Date类型转化为String类型.
+     * Date类型转化为String类型.
      *
      * @param date   the date
      * @param format the format
@@ -223,7 +221,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取指定日期时间的字符串,用于导出想要的格式.
+     * 获取指定日期时间的字符串,用于导出想要的格式.
      *
      * @param strDate String形式的日期时间，必须为yyyy-MM-dd HH:mm:ss格式
      * @param format  输出格式化字符串，如："yyyy-MM-dd HH:mm:ss"
@@ -244,7 +242,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取milliseconds表示的日期时间的字符串.
+     * 获取milliseconds表示的日期时间的字符串.
      *
      * @param milliseconds the milliseconds
      * @param format       格式化字符串，如："yyyy-MM-dd HH:mm:ss"
@@ -262,7 +260,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取表示当前日期时间的字符串.
+     * 获取表示当前日期时间的字符串.
      *
      * @param format 格式化字符串，如："yyyy-MM-dd HH:mm:ss"
      * @return String String类型的当前日期时间
@@ -281,7 +279,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取表示当前日期时间的字符串(可偏移).
+     * 获取表示当前日期时间的字符串(可偏移).
      *
      * @param format        格式化字符串，如："yyyy-MM-dd HH:mm:ss"
      * @param calendarField Calendar属性，对应offset的值， 如(Calendar.DATE,表示+offset天,Calendar.HOUR_OF_DAY,表示＋offset小时)
@@ -303,7 +301,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：计算两个日期所差的天数.
+     * 计算两个日期所差的天数.
      *
      * @param milliseconds1 the milliseconds1
      * @param milliseconds2 the milliseconds2
@@ -334,10 +332,11 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：计算两个日期所差的天数.
-     * @param startDate
-     * @param endDate
-     * @return
+     * 计算两个日期所差的天数.
+     *
+     * @param startDate startDate
+     * @param endDate   endDate
+     * @return int
      */
     public static int getOffectDay(Date startDate, Date endDate) {
         Calendar fromCalendar = Calendar.getInstance();
@@ -358,7 +357,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：计算两个日期所差的小时数.
+     * 计算两个日期所差的小时数.
      *
      * @param date1 第一个时间的毫秒表示
      * @param date2 第二个时间的毫秒表示
@@ -378,7 +377,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：计算两个日期所差的分钟数.
+     * 计算两个日期所差的分钟数.
      *
      * @param date1 第一个时间的毫秒表示
      * @param date2 第二个时间的毫秒表示
@@ -398,9 +397,9 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取本周一.
+     * 获取本周一.
      *
-     * @param format the format
+     * @param format format
      * @return String String类型日期时间
      */
     public static String getFirstDayOfWeek(String format) {
@@ -408,7 +407,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取本周日.
+     * 获取本周日.
      *
      * @param format the format
      * @return String String类型日期时间
@@ -418,10 +417,10 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取本周的某一天.
+     * 获取本周的某一天.
      *
-     * @param format        the format
-     * @param calendarField the calendar field
+     * @param format        format
+     * @param calendarField calendarField
      * @return String String类型日期时间
      */
     private static String getDayOfWeek(String format, int calendarField) {
@@ -447,9 +446,9 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取本月第一天.
+     * 获取本月第一天.
      *
-     * @param format the format
+     * @param format format
      * @return String String类型日期时间
      */
     public static String getFirstDayOfMonth(String format) {
@@ -468,9 +467,9 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取本月最后一天.
+     * 获取本月最后一天.
      *
-     * @param format the format
+     * @param format format
      * @return String String类型日期时间
      */
     public static String getLastDayOfMonth(String format) {
@@ -489,9 +488,9 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取表示当前日期的0点时间毫秒数.
+     * 获取表示当前日期的0点时间毫秒数.
      *
-     * @return the first time of day
+     * @return long the first time of day
      */
     public static long getFirstTimeOfDay() {
         Date date = null;
@@ -505,9 +504,9 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：获取表示当前日期24点时间毫秒数.
+     * 获取表示当前日期24点时间毫秒数.
      *
-     * @return the last time of day
+     * @return long the last time of day
      */
     public static long getLastTimeOfDay() {
         Date date = null;
@@ -521,8 +520,7 @@ public class CalendarTool {
     }
 
     /**
-     * 描述：判断是否是闰年()
-     * <p>(year能被4整除 并且 不能被100整除) 或者 year能被400整除,则该年为闰年.
+     * 判断是否是闰年()(year能被4整除 并且 不能被100整除) 或者 year能被400整除,则该年为闰年.
      *
      * @param year 年代（如2012）
      * @return boolean 是否为闰年
@@ -538,13 +536,14 @@ public class CalendarTool {
     /**
      * 以友好的方式显示时间
      *
-     * @param sdate
-     * @return
+     * @param sdate     sdate
+     * @param outFormat outFormat
+     * @return String
      */
     public static String formatDateStr2Desc(String sdate, String outFormat) {
         try {
 
-            if (!TextUtils.isEmpty(sdate) && (sdate.length()==10 || sdate.length() == 9 || sdate.length() == 8)){
+            if (!TextUtils.isEmpty(sdate) && (sdate.length() == 10 || sdate.length() == 9 || sdate.length() == 8)) {
                 sdate = sdate + " 00:00";
             }
 
@@ -645,8 +644,8 @@ public class CalendarTool {
     /**
      * 根据给定的日期判断是否为上下午.
      *
-     * @param strDate the str date
-     * @param format  the format
+     * @param strDate strDate
+     * @param format  format
      * @return the time quantum
      */
     public static String getTimeQuantum(String strDate, String format) {
@@ -684,9 +683,9 @@ public class CalendarTool {
     /**
      * 将Calendar转成字符串
      *
-     * @param calendar
+     * @param calendar calendar
      * @param format   指定格式
-     * @return
+     * @return String
      */
     public static String calendarConvertString(Calendar calendar, String format) {
         try {
@@ -701,9 +700,9 @@ public class CalendarTool {
     /**
      * 将字符串转成Calendar
      *
-     * @param times
+     * @param times  times
      * @param format 指定格式
-     * @return
+     * @return Calendar
      */
     public static Calendar stringConvertCalendar(String times, String format) {
         try {
@@ -720,11 +719,11 @@ public class CalendarTool {
 
 
     /***
-     * 比较2个时间的大小 ==0 相等 > 0 one 大于 two < 0 one 小于 two
+     * 比较2个时间的大小
      *
-     * @param one
-     * @param two
-     * @return
+     * @param one one
+     * @param two two
+     * @return int ==0相等 >0one大于two <0one小于two
      */
     public static int calendarCompare(Calendar one, Calendar two) {
         int num = -1;
@@ -739,7 +738,7 @@ public class CalendarTool {
     /**
      * 得到当前时间的随机数
      *
-     * @return
+     * @return String
      */
     public static String getCurRandomDate() {
         Calendar calendar = Calendar.getInstance();
@@ -757,9 +756,9 @@ public class CalendarTool {
     /**
      * 某年某月有多少天
      *
-     * @param year
-     * @param month
-     * @return
+     * @param year  year
+     * @param month month
+     * @return int
      */
     public static int getDaysInMonth(int year, int month) {
         Calendar c = Calendar.getInstance();
@@ -771,9 +770,9 @@ public class CalendarTool {
     /**
      * 某年某月的第一天是周几
      *
-     * @param year
-     * @param month
-     * @return
+     * @param year  year
+     * @param month month
+     * @return int
      */
     public static int getFirstWeekDayInMonth(int year, int month) {
         Calendar c = Calendar.getInstance();
@@ -786,9 +785,9 @@ public class CalendarTool {
     /**
      * 得到2个时间戳之间相差的 天 时 分 秒
      *
-     * @param date1
-     * @param date2
-     * @return
+     * @param date1 date1
+     * @param date2 date2
+     * @return long[]
      */
     public static long[] getDate(long date1, long date2) {
         long[] times = new long[]{0, 0, 0, 0};
@@ -818,8 +817,8 @@ public class CalendarTool {
     /**
      * 阳历节日
      *
-     * @param calendar
-     * @return
+     * @param calendar calendar
+     * @return String
      */
     public static String calendarFestival(Calendar calendar) {
         String festival = "";
@@ -836,7 +835,7 @@ public class CalendarTool {
 
         //常规节日
         int len2 = festivalsDays.length;
-        for (int i = 0; i <len2 ; i++) {
+        for (int i = 0; i < len2; i++) {
             int[] temp = festivalsDays[i];
             if (temp[0] == paMonth && temp[1] == paDay) {
                 festival = festivals[i];
@@ -848,8 +847,8 @@ public class CalendarTool {
     /**
      * 阴历节日
      *
-     * @param calendar
-     * @return
+     * @param calendar calendar
+     * @return String
      */
     public static String lunarHoliday(Calendar calendar) {
         String holiday = "";

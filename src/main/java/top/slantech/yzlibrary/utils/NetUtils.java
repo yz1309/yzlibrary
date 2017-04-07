@@ -7,8 +7,8 @@ import android.net.NetworkInfo;
 /**
  * 网络状态工具
  * add permission
- * <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
- * <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+ * android.permission.ACCESS_NETWORK_STATE
+ * android.permission.ACCESS_WIFI_STATE
  * 功能描述：
  * 1、检测网络是否可用 isNetworkConnected(Context context);
  * 2、获取当前网络类型 getNetworkType(Context context);
@@ -18,7 +18,8 @@ public class NetUtils {
     /**
      * 检测网络是否可用
      *
-     * @return
+     * @param context context
+     * @return boolean
      */
     public static boolean isNetworkConnected(Context context) {
         try {
@@ -27,7 +28,7 @@ public class NetUtils {
             return ni != null && ni.isConnectedOrConnecting();
         } catch (Exception e) {
         }
-        return  false;
+        return false;
     }
 
 
@@ -38,7 +39,8 @@ public class NetUtils {
     /**
      * 获取当前网络类型
      *
-     * @return 0：没有网络   1：WIFI网络   2：WAP网络    3：NET网络
+     * @param context context
+     * @return int 0没有网络   1WIFI网络   2WAP网络    3NET网络
      */
     public static int getNetworkType(Context context) {
         int netType = 0;
