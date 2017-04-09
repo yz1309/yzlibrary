@@ -1,6 +1,13 @@
 
 # Android-Library #
 
+## Getting started
+
+The first step is to include yzlibrary  into your project, for example, as a Gradle compile dependency:
+
+```groovy
+compile 'top.slantech:yzlibrary:1.0.6'
+```
 ## Features ##
 
 - Custom Application(自定义Application)
