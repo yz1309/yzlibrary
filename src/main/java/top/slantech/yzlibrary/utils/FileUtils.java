@@ -97,6 +97,7 @@ import top.slantech.yzlibrary.R;
  * 40、根据文件后缀名获得对应的MIME类型 getMIMEType(File file)
  * 41、获取文件名称对应的图标 getFileIcon(String fileName)
  * 42、解压压缩文件 unZipResourcePackage(String savePath, String toPath)
+ * 43、打开文件 openFile(context,file)
  */
 public class FileUtils {
     // 保存的路径
@@ -1439,6 +1440,23 @@ public class FileUtils {
         return true;
     }
 
+    /**
+     * 打开文件
+     *
+     * @param context context
+     * @param file    file
+     */
+    public static void openFile(Context context, File file) {
+        try {
+            Intent intent = new Intent();
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setAction(android.content.Intent.ACTION_VIEW);
+            String type = getMIMEType(file);
+            intent.setDataAndType(Uri.fromFile(file), type);
+            context.startActivity(intent);
+        } catch (Exception ex) {
+        }
+    }
 
     private final static String[][] MIME_MapTable = {
             // {后缀名，MIME类型}
