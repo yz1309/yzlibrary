@@ -1,15 +1,23 @@
 package top.slantech.yzlibrary.utils;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 
 import java.util.List;
+
+import top.slantech.yzlibrary.R;
+import top.slantech.yzlibrary.activity.BaseApplication;
 
 /**
  * 安卓相关工具类
  * 功能描述：
  * 1、获取SDK版本号 getAndroidSDKVersion();
- * Created by slantech on 2016/08/31 11:38
+ * 2、打开市场 openAppInMarket(context);
  */
 public class AndroidUtils {
     /**
@@ -44,4 +52,54 @@ public class AndroidUtils {
         }
         return false;
     }
+
+    /**
+     * 打开市场
+     *
+     * @param context context
+     */
+    public static void openAppInMarket(Context context) {
+        if (context != null) {
+            String pckName = context.getPackageName();
+            try {
+                gotoMarket(context, pckName);
+            } catch (Exception ex) {
+                try {
+                    String otherMarketUri = "http://market.android.com/details?id="
+                            + pckName;
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse(otherMarketUri));
+                    context.startActivity(intent);
+                } catch (Exception e) {
+
+                }
+            }
+        }
+    }
+
+    public static void gotoMarket(Context context, String pck) {
+        if (!isHaveMarket(context)) {
+            BaseApplication.cusToast((Activity) context, context.getString(R.string.not_set_up_market), 0);
+            return;
+        }
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://details?id=" + pck));
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            context.startActivity(intent);
+        }
+    }
+
+    public static boolean isHaveMarket(Context context) {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.MAIN");
+        intent.addCategory("android.intent.category.APP_MARKET");
+        PackageManager pm = context.getPackageManager();
+        List<ResolveInfo> infos = pm.queryIntentActivities(intent, 0);
+        return infos.size() > 0;
+    }
+
+
+
+
 }

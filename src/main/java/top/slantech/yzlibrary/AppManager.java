@@ -2,6 +2,8 @@ package top.slantech.yzlibrary;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 
 import java.util.Stack;
 
@@ -125,5 +127,40 @@ public class AppManager {
             activityStack.remove(activity);
         }
     }
-	
+
+    /**
+     * 在浏览器中打开指定的URL
+     *
+     * @param context context
+     * @param url url
+     */
+    public static void goUrl(Activity context, String url) {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.VIEW");
+        // path 包含 http:
+        Uri content_uri_browsers = Uri.parse(url);
+        intent.setData(content_uri_browsers);
+        context.startActivity(intent);
+    }
+
+    /**
+     * Activity 跳转
+     *
+     * @param context context
+     * @param tClass tClass
+     */
+    public static void goActivity(Activity context, Class<?> tClass) {
+        Intent intent = new Intent(context, tClass);
+        context.startActivity(intent);
+    }
+
+    /**
+     * Activity 跳转
+     *
+     * @param context context
+     * @param intent intent
+     */
+    public static void goActivity(Activity context, Intent intent) {
+        context.startActivity(intent);
+    }
 }

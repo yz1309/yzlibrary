@@ -70,7 +70,6 @@ public class BaseApplication extends Application {
         toast.show();
     }
 
-
     /**
      * 获取包信息
      *
@@ -86,7 +85,6 @@ public class BaseApplication extends Application {
         }
         return info;
     }
-
 
     /**
      * 用来判断服务是否运行
@@ -109,7 +107,6 @@ public class BaseApplication extends Application {
         return isRunning;
     }
 
-
     private long backCunt = 0;
 
     /***
@@ -130,7 +127,6 @@ public class BaseApplication extends Application {
             return true;
         }
     }
-
 
     /**
      * 拨打电话android.permission.CALL_PHONE

@@ -1,14 +1,21 @@
 package top.slantech.yzlibrary.utils;
 
+import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.io.DataOutputStream;
 import java.io.File;
+import java.util.LinkedList;
 
 import top.slantech.yzlibrary.interfaces.OnGetDataLinstener;
 
@@ -20,7 +27,8 @@ import top.slantech.yzlibrary.interfaces.OnGetDataLinstener;
  * 3、调用系统分享功能 分享图片 systemShareImg(Activity,imgPath,title);
  * 4、是否root isRootSystem();
  * 5、是否root getRootAhth();
- * 6、是否打开wifi需配置权限
+ * 6、是否打开wifi需配置权限 isWifiOpened(context);
+ * 7、获取通知栏颜色 getNotificationColor(context);
  */
 public class SettingUtils {
 
@@ -190,5 +198,55 @@ public class SettingUtils {
             e.printStackTrace();
         }
         return false;
+    }
+
+    /**
+     * 获取通知栏颜色
+     * @param context context
+     * @return int
+     */
+    public static int getNotificationColor(Context context) {
+        NotificationCompat.Builder builder=new NotificationCompat.Builder(context);
+        Notification notification=builder.build();
+        int layoutId=notification.contentView.getLayoutId();
+        ViewGroup viewGroup= (ViewGroup) LayoutInflater.from(context).inflate(layoutId, null, false);
+        if (viewGroup.findViewById(android.R.id.title)!=null) {
+            return ((TextView) viewGroup.findViewById(android.R.id.title)).getCurrentTextColor();
+        }
+        return findColor(viewGroup);
+    }
+
+    private static boolean isSimilarColor(int baseColor, int color) {
+        int simpleBaseColor=baseColor|0xff000000;
+        int simpleColor=color|0xff000000;
+        int baseRed= Color.red(simpleBaseColor)-Color.red(simpleColor);
+        int baseGreen=Color.green(simpleBaseColor)-Color.green(simpleColor);
+        int baseBlue=Color.blue(simpleBaseColor)-Color.blue(simpleColor);
+        double value=Math.sqrt(baseRed*baseRed+baseGreen*baseGreen+baseBlue*baseBlue);
+        if (value<180.0) {
+            return true;
+        }
+        return false;
+    }
+
+    private static int findColor(ViewGroup viewGroupSource) {
+        int color=Color.TRANSPARENT;
+        LinkedList<ViewGroup> viewGroups=new LinkedList<>();
+        viewGroups.add(viewGroupSource);
+        while (viewGroups.size()>0) {
+            ViewGroup viewGroup1=viewGroups.getFirst();
+            for (int i = 0; i < viewGroup1.getChildCount(); i++) {
+                if (viewGroup1.getChildAt(i) instanceof ViewGroup) {
+                    viewGroups.add((ViewGroup) viewGroup1.getChildAt(i));
+                }
+                else if (viewGroup1.getChildAt(i) instanceof TextView) {
+                    if (((TextView) viewGroup1.getChildAt(i)).getCurrentTextColor()!=-1) {
+                        color=((TextView) viewGroup1.getChildAt(i)).getCurrentTextColor();
+                    }
+                }
+            }
+            viewGroups.remove(viewGroup1);
+        }
+        return color;
     }
 }
