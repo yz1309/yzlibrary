@@ -6,7 +6,7 @@
 The first step is to include yzlibrary  into your project, for example, as a Gradle compile dependency:
 
 ```groovy
-compile 'top.slantech:yzlibrary:1.0.6'
+compile 'top.slantech:yzlibrary:1.0.7'
 ```
 ## Features ##
 
