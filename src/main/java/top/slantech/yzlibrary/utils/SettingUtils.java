@@ -200,6 +200,10 @@ public class SettingUtils {
         return false;
     }
 
+    public static boolean isDarkNotificationTheme(Context context) {
+        return !isSimilarColor(Color.BLACK, getNotificationColor(context));
+    }
+
     /**
      * 获取通知栏颜色
      * @param context context
