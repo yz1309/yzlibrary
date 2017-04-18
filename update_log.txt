@@ -1,0 +1,16 @@
+1.0.7 2017-04-14 15:45
+1、FileUtils 新增 openFile 方法
+2、取消内存检测 应用
+3、版本设置为 1.0.7
+4、提取CommonNewAdapter、ViewNewHolder
+5、AndroidUtils 新增 openAppInMarket 、gotoMarket、isHaveMarket
+6、strings.xml 新增 not_set_up_market 等等
+7、Url2Path 新增
+8、AppManager 新增goUrl、goActivity、goActivity
+9、SettingUtils 新增 getNotificationColor
+10、drawable-xxhdpi 新增图片
+------------------------
+1.1.1
+1、strings.xml 继续提取
+2、AndroidMainifest.xml allowBackup设置为false
+3、SettingUtils 新增 isDarkNotificationTheme 方法
